@@ -1,0 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/python-3
+{
+  // "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "args": {
+      "BUILDKIT_INLINE_CACHE": "0"
+    }
+  },
+  "customizations": {
+      "codespaces": {
+      },
+      "vscode": {
+        "settings": {},
+        "extensions": [
+          "ms-python.python",
+          "ms-python.vscode-pylance"
+        ]
+      }
+    },
+  // Install app dependencies.
+  // "postCreateCommand": "pip3 install --user -r requirements.txt"
+}
