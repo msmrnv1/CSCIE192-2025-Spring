@@ -15,10 +15,9 @@
         "settings": {},
         "extensions": [
           "ms-python.python",
-          "ms-python.vscode-pylance"
+          "ms-python.vscode-pylance",
+          "ms-toolsai.jupyter",
         ]
       }
     },
-  // Install app dependencies.
-  // "postCreateCommand": "pip3 install --user -r requirements.txt"
 }

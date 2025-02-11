@@ -22,6 +22,10 @@ OR
 python
 ```
 
+4. Open an interactive notebook in the IDE
+```
+code <my-notebook>.ipynb
+```
 **Note: Don't forget to turn off the codespace, else you will get charged for the codespace even when you are not using it.**
 
 For more advanced uses of devcontainers see https://github.com/esumitra/python-codespace-spark
