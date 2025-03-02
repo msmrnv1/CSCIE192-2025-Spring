@@ -32,12 +32,12 @@ VALUES
 INSERT INTO `g_taxi_user_rides`
 (user_id, taxi_ride_id)
 VALUES
-("g_user_id1", "y-2024-012/2"),
-("g_user_id1", "y-2024-012/5"),
-("g_user_id2", "y-2024-012/2"),
-("g_user_id2", "y-2024-012/4"),
-("g_user_id2", "y-2024-012/6"),
-("g_user_id3", "y-2024-012/7")
+("g_user_id1", "y-2024-01/2"),
+("g_user_id1", "y-2024-01/5"),
+("g_user_id2", "y-2024-01/2"),
+("g_user_id2", "y-2024-01/4"),
+("g_user_id2", "y-2024-01/6"),
+("g_user_id3", "y-2024-01/7")
 ;
 
 commit;
