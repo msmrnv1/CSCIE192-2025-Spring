@@ -28,12 +28,12 @@ VALUES
 INSERT INTO `y_taxi_user_rides`
 (user_id, taxi_ride_id)
 VALUES
-("y_user_id1", "g-2024-01/2"),
-("y_user_id1", "g-2024-01/5"),
-("y_user_id2", "g-2024-01/2"),
-("y_user_id3", "g-2024-01/4"),
-("y_user_id3", "g-2024-01/6"),
-("y_user_id3", "g-2024-012/7")
+("y_user_id1", "y-2024-01/2"),
+("y_user_id1", "y-2024-01/5"),
+("y_user_id2", "y-2024-01/2"),
+("y_user_id3", "y-2024-01/4"),
+("y_user_id3", "y-2024-01/6"),
+("y_user_id3", "y-2024-01/7")
 ;
 
 SELECT * FROM `y_taxi_users`;
