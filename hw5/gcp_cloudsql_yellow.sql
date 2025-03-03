@@ -30,7 +30,7 @@ INSERT INTO `y_taxi_user_rides`
 VALUES
 ("y_user_id1", "y-2024-01/2"),
 ("y_user_id1", "y-2024-01/5"),
-("y_user_id2", "y-2024-01/2"),
+("y_user_id2", "y-2024-01/3"),
 ("y_user_id3", "y-2024-01/4"),
 ("y_user_id3", "y-2024-01/6"),
 ("y_user_id3", "y-2024-01/7")
