@@ -1,0 +1,59 @@
+-- green_taxi_with_users.sqlx - name of the file become the name of the created table
+-- Config blocks allow you to configure, document, and test your data assets.
+config { type: "view",
+    columns: {
+        taxi_ride_id: "trip ID based on the Fivetran _file and _line",
+        user_id: "user who ordered the ride",
+        first_name: "first name of the user",
+        last_name: "last name of the user",
+        taxi_type: "type of taxi - yellow or green",
+        pickup_time: "pickup time",
+        dropoff_time: "dropoff time",
+        do_location_id: "dropoff location ID",
+        do_borough: "dropoff borough name - can be empty if ID did not have any borough mapping",
+        pu_location_id: "pickup location ID",
+        pu_borough: "pickup borough name - can be empty if ID did not have any borough mapping",
+        fare_amount: "fare amount",
+        trip_distance: "trip distance",
+        trip_duration_minutes: " trip duration in minutes",
+        passenger_count: "passenger count",
+        ratecode_id: "ratecode_id",
+        total_amount: "total amount paid for the ride",
+        tip_amount: "tip amount"
+    }
+
+}
+
+-- Use the ref() function to manage dependencies.
+-- Learn more about ref() and other built in functions here: https://cloud.google.com/dataform/docs/dataform-core
+
+WITH ride_data AS (
+SELECT
+  rides.taxi_ride_id,
+  user_rides.user_id AS user_id,
+  taxi_type,
+  do_borough,
+  pu_borough,
+  trip_duration_minutes,
+  ratecode_id,
+  total_amount,
+  tip_amount
+FROM ${ref("green_taxi_with_zones")} as rides LEFT JOIN 
+    `taxi_data_raw.taxi_db_g_taxi_user_rides` AS user_rides ON
+    rides.taxi_ride_id = user_rides.taxi_ride_id
+)
+
+SELECT 
+    taxi_ride_id,
+    ride_data.user_id,
+    first_name,
+    last_name,
+    taxi_type,
+    do_borough,
+    pu_borough,
+    trip_duration_minutes,
+    ratecode_id,
+    total_amount,
+    tip_amount
+FROM ride_data LEFT JOIN `taxi_data_raw.taxi_db_g_taxi_users` AS users
+  ON ride_data.user_id = users.user_id
