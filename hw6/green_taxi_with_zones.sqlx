@@ -42,5 +42,4 @@ SELECT
   ratecode_id,
   total_amount,
   tip_amount
-FROM `taxi_data_raw.green_2024_01` LEFT JOIN `taxi_data_static.taxi_zones` AS zones
-  ON zones.LocationID = dolocation_id
+FROM `taxi_data_raw.green_2024_01`
